@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useRef } from "react";
 import { React, useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import {
@@ -11,26 +12,46 @@ import {
   Card,
 } from "react-bootstrap";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import { login, logout } from "./ConnectToNEAR";
 
 function App() {
   const [userMessage, changeUserMessage] = useState(
     "User message will appear here!"
   );
+  const [buttonDisable, changeButtonDisable] = useState(false);
+
+  const messageRef = useRef();
+
+  useEffect(() => {
+    // const getMessage = async () => {
+    //   changeUserMessage(
+    //     await window.contract.get_message({ account_id: window.accountId })
+    //   );
+    // };
+    getMessage();
+  }, []);
+
+  // const submit = async (e) => {
+  //   e.preventDefault();
+  //   changeButtonDisable(true);
+  //   await window.contract.set_message({ message: messageRef.current.value });
+  //   alert("please refresh page");
+  // };
+
   return (
     <BrowserRouter>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
           <Navbar.Brand href='#home'>NEAR Protocol</Navbar.Brand>
-          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse id='responsive-navbar-nav'>
-            <Nav className='me-auto'></Nav>
-            <Nav>
-              <Nav.Link eventKey={2} href='#memes'>
-                Login
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav className='me-auto'></Nav>
+          <Nav>
+            <Nav.Link onClick={window.accountId === "" ? login : logout}>
+              {console.log(window.accountId)}
+              {window.accountId === "" ? "Login" : window.accountId}
+            </Nav.Link>
+          </Nav>
         </Container>
       </Navbar>
       <Container>
@@ -52,10 +73,15 @@ function App() {
           <Form>
             <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Enter Your Message Here</Form.Label>
-              <Form.Control placeholder='Enter Message' />
+              <Form.Control ref={messageRef} placeholder='Enter Message' />
             </Form.Group>
 
-            <Button variant='primary' type='submit'>
+            <Button
+              disabled={buttonDisable}
+              onClick={submit}
+              variant='primary'
+              type='submit'
+            >
               Submit
             </Button>
           </Form>
