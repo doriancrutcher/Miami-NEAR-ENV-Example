@@ -57,7 +57,12 @@ function App() {
               <Form.Control placeholder='Enter Message' />
             </Form.Group>
 
-            <Button variant='primary' type='submit'>
+            <Button
+              disabled={buttonDisable}
+              // onClick={submit}
+              variant='primary'
+              type='submit'
+            >
               Submit
             </Button>
           </Form>
