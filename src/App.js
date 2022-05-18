@@ -46,7 +46,7 @@ function App() {
             <Card.Body>
               <Card.Title>Your Message</Card.Title>
               <Card.Subtitle className='mb-2 text-muted'>
-                Display Port for your message to the world! Or at lease Miami
+                Display Port for your message to the world! Or at least Miami
               </Card.Subtitle>
               <Alert>{userMessage}</Alert>
             </Card.Body>
