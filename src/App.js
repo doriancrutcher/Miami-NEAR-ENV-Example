@@ -17,6 +17,8 @@ function App() {
   const [userMessage, changeUserMessage] = useState(
     "User message will appear here!"
   );
+  const [buttonDisable, changeButtonDisable] = useState(false);
+
   return (
     <BrowserRouter>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
