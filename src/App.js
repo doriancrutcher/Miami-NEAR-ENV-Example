@@ -25,20 +25,20 @@ function App() {
   const messageRef = useRef();
 
   useEffect(() => {
-    // const getMessage = async () => {
-    //   changeUserMessage(
-    //     await window.contract.get_message({ account_id: window.accountId })
-    //   );
-    // };
+    const getMessage = async () => {
+      changeUserMessage(
+        await window.contract.get_message({ account_id: window.accountId })
+      );
+    };
     getMessage();
   }, []);
 
-  // const submit = async (e) => {
-  //   e.preventDefault();
-  //   changeButtonDisable(true);
-  //   await window.contract.set_message({ message: messageRef.current.value });
-  //   alert("please refresh page");
-  // };
+  const submit = async (e) => {
+    e.preventDefault();
+    changeButtonDisable(true);
+    await window.contract.set_message({ message: messageRef.current.value });
+    alert("please refresh page");
+  };
 
   return (
     <BrowserRouter>
