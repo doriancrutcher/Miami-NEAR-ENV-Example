@@ -19,6 +19,8 @@ function App() {
   );
   const [buttonDisable, changeButtonDisable] = useState(false);
 
+  const messageRef = useRef();
+
   return (
     <BrowserRouter>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
@@ -54,7 +56,7 @@ function App() {
           <Form>
             <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Enter Your Message Here</Form.Label>
-              <Form.Control placeholder='Enter Message' />
+              <Form.Control ref={messageRef} placeholder='Enter Message' />
             </Form.Group>
 
             <Button
