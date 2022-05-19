@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/doriankinoocrutcher/Documents/NEAR/Blockheads/app-starter/near-starting-environment/miami-contract/target/wasm32-unknown-unknown/debug/build/typenum-2674ffe18cd65113/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/doriankinoocrutcher/Documents/NEAR/Blockheads/app-starter/near-starting-environment/miami-contract/target/wasm32-unknown-unknown/debug/build/typenum-2674ffe18cd65113/out/op.rs

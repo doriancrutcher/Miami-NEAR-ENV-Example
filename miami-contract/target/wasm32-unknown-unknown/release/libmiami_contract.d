@@ -1,1 +1,0 @@
-/Users/doriankinoocrutcher/Documents/NEAR/Blockheads/app-starter/near-starting-environment/miami-contract/target/wasm32-unknown-unknown/release/libmiami_contract.rlib: /Users/doriankinoocrutcher/Documents/NEAR/Blockheads/app-starter/near-starting-environment/miami-contract/src/lib.rs
